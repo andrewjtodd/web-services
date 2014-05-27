@@ -1,0 +1,37 @@
+template: Hello, %s!
+
+defaultName: Stranger
+
+database:
+    driverClass: org.h2.Driver
+    user: sa
+    password: sa
+    url: jdbc:h2:target/example
+
+server:
+    adminConnectors:
+        - type: http
+          port: 8081
+        - type: https
+          port: 8444
+          keyStorePath: keystore.jks
+          keyStorePassword: example
+          validateCerts: false
+
+    applicationConnectors:
+        - type: http
+          port: 8080
+        - type: https
+          port: 8443
+          keyStorePath: keystore.jks
+          keyStorePassword: example
+          validateCerts: false
+
+logging:
+    level: INFO
+    loggers:
+        au.com.privitar: DEBUG
+        org.hibernate.SQL: ALL
+
+    appenders:
+        - type: console
