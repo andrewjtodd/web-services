@@ -1,0 +1,10 @@
+*.swp
+*.iml
+*.class
+target
+*/target
+*.idea
+
+*.jar
+*.war
+*.ear

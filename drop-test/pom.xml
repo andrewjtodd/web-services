@@ -5,13 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>au.com.privitar</groupId>
-    <artifactId>drop-test</artifactId>
+    <artifactId>drop-test-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <dropwizard.version>0.7.0</dropwizard.version>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Andrew Todd</name>
+            <email>andrewjtodd@gmail.com</email>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>io.dropwizard</groupId>
@@ -21,7 +27,7 @@
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-db</artifactId>
-            <version>0.7.0</version>
+            <version>${dropwizard.version}</version>
         </dependency>
     </dependencies>
 
