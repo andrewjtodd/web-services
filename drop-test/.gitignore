@@ -4,6 +4,7 @@
 target
 */target
 *.idea
+.idea
 
 *.jar
 *.war
