@@ -11,6 +11,7 @@ public class Saying {
 
     @Length(max = 3)
     private String content;
+    private Double value;
 
     public Saying() {
 
@@ -19,6 +20,11 @@ public class Saying {
     public Saying(long id, String content) {
         this.id = id;
         this.content = content;
+    }
+
+    public Saying(long id, Double value) {
+        this.id = id;
+        this.value = value;
     }
 
     @JsonProperty
@@ -30,4 +36,7 @@ public class Saying {
     public String getContent() {
         return content;
     }
+
+    @JsonProperty
+    public Double getvalue() { return value; }
 }

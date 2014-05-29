@@ -16,104 +16,18 @@ public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
     private String defaultName;
 
-    @NotEmpty
-    private Double CPI;
-
-    @NotEmpty
-    private Double salaryInflationIncrement;
-
-    @NotEmpty
-    private Double taxRate;
-
-    @NotEmpty
-    private Double defaultContributions;
-
-    @NotEmpty
-    private Double defaultReturn;
-
-    @NotEmpty
-    private Double defaultInsurance;
-
-    @NotEmpty
-    private Double defaultAdminFee;
-
-    @NotEmpty
-    private Double defaultMgtFee;
-
-    @NotEmpty
-    private Double defaultAdviserFee;
-
-    public Double getCPI() {
-        return CPI;
+    @JsonProperty
+    public CalcConfiguration getCalcConfiguration() {
+        return calcConfiguration;
     }
 
-    public void setCPI(Double CPI) {
-        this.CPI = CPI;
+    @JsonProperty
+    public void setCalcConfiguration(CalcConfiguration calcConfiguration) {
+        this.calcConfiguration = calcConfiguration;
     }
 
-    public Double getSalaryInflationIncrement() {
-        return salaryInflationIncrement;
-    }
-
-    public void setSalaryInflationIncrement(Double salaryInflationIncrement) {
-        this.salaryInflationIncrement = salaryInflationIncrement;
-    }
-
-    public Double getTaxRate() {
-        return taxRate;
-    }
-
-    public void setTaxRate(Double taxRate) {
-        this.taxRate = taxRate;
-    }
-
-    public Double getDefaultContributions() {
-        return defaultContributions;
-    }
-
-    public void setDefaultContributions(Double defaultContributions) {
-        this.defaultContributions = defaultContributions;
-    }
-
-    public Double getDefaultReturn() {
-        return defaultReturn;
-    }
-
-    public void setDefaultReturn(Double defaultReturn) {
-        this.defaultReturn = defaultReturn;
-    }
-
-    public Double getDefaultInsurance() {
-        return defaultInsurance;
-    }
-
-    public void setDefaultInsurance(Double defaultInsurance) {
-        this.defaultInsurance = defaultInsurance;
-    }
-
-    public Double getDefaultAdminFee() {
-        return defaultAdminFee;
-    }
-
-    public void setDefaultAdminFee(Double defaultAdminFee) {
-        this.defaultAdminFee = defaultAdminFee;
-    }
-
-    public Double getDefaultMgtFee() {
-        return defaultMgtFee;
-    }
-
-    public void setDefaultMgtFee(Double defaultMgtFee) {
-        this.defaultMgtFee = defaultMgtFee;
-    }
-
-    public Double getDefaultAdviserFee() {
-        return defaultAdviserFee;
-    }
-
-    public void setDefaultAdviserFee(Double defaultAdviserFee) {
-        this.defaultAdviserFee = defaultAdviserFee;
-    }
+    @Valid
+    private CalcConfiguration calcConfiguration;
 
     @Valid
     @NotNull
@@ -149,7 +63,4 @@ public class HelloWorldConfiguration extends Configuration {
         this.database = database;
     }
 
-//    public Template buildTemplate() {
-//        return new Template(template, defaultName);
-//    }
 }

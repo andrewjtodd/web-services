@@ -2,8 +2,8 @@ template: Hello, %s!
 
 defaultName: Stranger
 
-calcsettings:
-    CPI: 0.025
+calcConfiguration:
+    cpi: 0.025
     salaryInflationIncrement: 0.0015
     taxRate: 0.15
     defaultContributions: 0.0925
