@@ -29,6 +29,8 @@ public class HelloWorldResource {
     @Timed
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
         final String value = String.format(template, name.or(defaultName));
-        return new Saying(counter.incrementAndGet(), value);
+
+        final String thefee = name.or("CANT FIND IT");
+        return new Saying(counter.incrementAndGet(), thefee);
     }
 }
