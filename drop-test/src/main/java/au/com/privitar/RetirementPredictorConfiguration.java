@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class HelloWorldConfiguration extends Configuration {
+public class RetirementPredictorConfiguration extends Configuration {
 
     @NotEmpty
     private String template;

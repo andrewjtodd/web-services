@@ -4,10 +4,10 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
-public class HelloWorldService extends Application<HelloWorldConfiguration> {
+public class RetirementPredictorService extends Application<RetirementPredictorConfiguration> {
 
     public static void main(String[] args) throws Exception {
-        new HelloWorldService().run(args);
+        new RetirementPredictorService().run(args);
     }
 
     @Override
@@ -16,13 +16,13 @@ public class HelloWorldService extends Application<HelloWorldConfiguration> {
     }
 
     @Override
-    public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
+    public void initialize(Bootstrap<RetirementPredictorConfiguration> bootstrap) {
 
     }
 
     @Override
-    public void run(HelloWorldConfiguration configuration, Environment environment) {
-        final HelloWorldResource resource = new HelloWorldResource(configuration.getTemplate(), configuration.getDefaultName(), configuration.getCalcConfiguration());
+    public void run(RetirementPredictorConfiguration configuration, Environment environment) {
+        final RetirementPredictorResource resource = new RetirementPredictorResource(configuration.getTemplate(), configuration.getDefaultName(), configuration.getCalcConfiguration());
 
         final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
