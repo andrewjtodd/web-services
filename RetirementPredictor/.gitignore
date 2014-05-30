@@ -1,0 +1,11 @@
+*.swp
+*.iml
+*.class
+target
+out
+*.idea
+.idea
+
+*.jar
+*.war
+*.ear

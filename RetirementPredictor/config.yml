@@ -1,0 +1,49 @@
+template: Hello, %s!
+
+defaultName: Stranger
+
+calcConfiguration:
+    cpi: 0.025
+    salaryInflationIncrement: 0.015
+    taxRate: 0.15
+    defaultContributions: 0.0925
+    defaultReturn: 0.07
+    defaultInsurance: 2
+    defaultAdminFee: 5
+    defaultMgtFee: 0.08
+    defaultAdviserFee: 0.08
+
+
+database:
+    driverClass: org.h2.Driver
+    user: sa
+    password: sa
+    url: jdbc:h2:target/example
+
+server:
+    adminConnectors:
+        - type: http
+          port: 8081
+        - type: https
+          port: 8444
+          keyStorePath: keystore.jks
+          keyStorePassword: example
+          validateCerts: false
+
+    applicationConnectors:
+        - type: http
+          port: 8080
+        - type: https
+          port: 8443
+          keyStorePath: keystore.jks
+          keyStorePassword: example
+          validateCerts: false
+
+logging:
+    level: INFO
+    loggers:
+        au.com.privitar: DEBUG
+        org.hibernate.SQL: ALL
+
+    appenders:
+        - type: console
