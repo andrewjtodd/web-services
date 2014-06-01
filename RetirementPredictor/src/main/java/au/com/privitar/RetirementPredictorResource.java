@@ -34,13 +34,13 @@ public class RetirementPredictorResource {
     }
     @GET
     @Timed
-    public Saying predictRetirement(@QueryParam("name") Optional<String> name) {
+    public RetirementPrediction predictRetirement(@QueryParam("name") Optional<String> name) {
         logger.debug("Predicting retirement");
         //final String value = String.format(template, name.or(defaultName));
 
         RetirementPredictorCalculator calculator = new RetirementPredictorCalculator();
         Double prediction = calculator.doPrediction(config);
 
-        return new Saying(counter.incrementAndGet(), prediction);
+        return new RetirementPrediction(counter.incrementAndGet(), prediction);
     }
 }
